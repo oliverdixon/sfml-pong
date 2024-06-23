@@ -4,15 +4,17 @@ project(Pong)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 
-add_executable(Pong main.cpp
+add_executable(Pong
         Paddle.h
         Paddle.cpp
         Ball.cpp
         Ball.h
-        IMoveable.h
+        IMovable.h
         ICollideable.h
         Wall.cpp
         Wall.h
+        Game.cpp
+        Game.h
 )
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)

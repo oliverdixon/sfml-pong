@@ -1,6 +1,8 @@
-//
-// Created by owd on 18/06/24.
-//
+/**
+ * @file
+ * @author Oliver Dixon
+ * @date 23 June 2022
+ */
 
 #include "Paddle.h"
 

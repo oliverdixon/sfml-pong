@@ -1,8 +1,9 @@
-//
-// Created by owd on 18/06/24.
-//
+/**
+ * @file
+ * @author Oliver Dixon
+ * @date 23 June 2022
+ */
 
-#include <iostream>
 #include "Ball.h"
 
 Ball::Ball(sf::Vector2f initial_centroid_position):

@@ -1,6 +1,8 @@
-//
-// Created by owd on 23/06/24.
-//
+/**
+ * @file
+ * @author Oliver Dixon
+ * @date 23 June 2022
+ */
 
 #include "Wall.h"
 
@@ -13,5 +15,5 @@ const sf::Vector2f& Wall::getSize() const {
 }
 
 Wall::Wall(const sf::Vector2f& position, const sf::Vector2f& size):
-    position(position),
-    size(size) { };
+        position(position),
+        size(size) { }
