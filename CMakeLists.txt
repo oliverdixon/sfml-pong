@@ -5,20 +5,20 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 
 add_executable(Pong
-        Paddle.h
-        Paddle.cpp
-        Ball.cpp
-        Ball.h
-        IUpdatable.h
-        ICollideable.h
-        Wall.cpp
-        Wall.h
-        Game.cpp
-        Game.h
-        IDrawable.h
-        Score.cpp
-        Score.h
-        IAnimatable.h
+        src/Paddle.h
+        src/Paddle.cpp
+        src/Ball.cpp
+        src/Ball.h
+        src/IUpdatable.h
+        src/ICollideable.h
+        src/Wall.cpp
+        src/Wall.h
+        src/Game.cpp
+        src/Game.h
+        src/IDrawable.h
+        src/Score.cpp
+        src/Score.h
+        src/IAnimatable.h
 )
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
