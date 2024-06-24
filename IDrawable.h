@@ -1,7 +1,7 @@
 /**
  * @file
  * @author Oliver Dixon
- * @date 23 June 2022
+ * @date 23 June 2024
  */
 
 #ifndef PONG_IDRAWABLE_H
@@ -40,7 +40,7 @@ public:
     }
 
 protected:
-    ShapeType shape;
+    ShapeType shape{};
 };
 
 #endif //PONG_IDRAWABLE_H

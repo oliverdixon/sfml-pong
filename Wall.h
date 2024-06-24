@@ -1,7 +1,7 @@
 /**
  * @file
  * @author Oliver Dixon
- * @date 23 June 2022
+ * @date 23 June 2024
  */
 
 #ifndef PONG_WALL_H
@@ -12,12 +12,12 @@
 /**
  * A wall represents the most basic collideable block: an immovable two-dimensional rectangle.
  */
-class Wall: public ICollideable {
+class Wall:
+        public ICollideable {
 private:
     sf::Vector2f size;
     sf::Vector2f position;
 
-protected:
     [[nodiscard]] const sf::Vector2f& getSize() const override;
     [[nodiscard]] const sf::Vector2f& getPosition() const override;
 

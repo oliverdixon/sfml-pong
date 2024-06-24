@@ -1,7 +1,7 @@
 /**
  * @file
  * @author Oliver Dixon
- * @date 23 June 2022
+ * @date 23 June 2024
  */
 
 #ifndef PONG_GAME_H
@@ -13,6 +13,7 @@
 #include "Paddle.h"
 #include "Ball.h"
 #include "Wall.h"
+#include "Score.h"
 
 /**
  * The Game encapsulates the entire playing experience, including the SFML window and event handler, and all on-screen
@@ -24,6 +25,7 @@ public:
      * Create the game window and begin the game loop, event listeners, and renderers.
      */
     Game();
+
 private:
     static constexpr int WINDOW_WIDTH = 800;
     static constexpr int WINDOW_HEIGHT = 600;
@@ -34,6 +36,11 @@ private:
 
     Paddle left_paddle;
     Paddle right_paddle;
+
+    sf::Font font;
+
+    Score left_score;
+    Score right_score;
 
     Ball ball;
 
@@ -67,6 +74,11 @@ private:
      * @param event The event, likely at the head of the SFML event queue.
      */
     void handle_event(const sf::Event& event);
+
+    /**
+     * Resets all sprites (Animatables) to their initial positions
+     */
+    void reset_sprites();
 };
 
 #endif //PONG_GAME_H

@@ -9,13 +9,16 @@ add_executable(Pong
         Paddle.cpp
         Ball.cpp
         Ball.h
-        IMovable.h
+        IUpdatable.h
         ICollideable.h
         Wall.cpp
         Wall.h
         Game.cpp
         Game.h
         IDrawable.h
+        Score.cpp
+        Score.h
+        IAnimatable.h
 )
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)

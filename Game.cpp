@@ -1,18 +1,24 @@
 /**
  * @file
  * @author Oliver Dixon
- * @date 23 June 2022
+ * @date 23 June 2024
  */
 
 #include "Game.h"
 
 Game::Game():
+
+        // TODO: refactor this monstrosity
+
         window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_TITLE),
 
         left_paddle(sf::Vector2f(0, WINDOW_HEIGHT / 2.0f)),
         right_paddle(sf::Vector2f(WINDOW_WIDTH, WINDOW_HEIGHT / 2.0f)),
 
         ball(sf::Vector2f(WINDOW_WIDTH / 2.0f, WINDOW_HEIGHT / 2.0f)),
+
+        left_score(font, sf::Vector2f(WINDOW_WIDTH / 3.0 - 20, 20)),
+        right_score(font, sf::Vector2f(2.0 * WINDOW_WIDTH / 3 + 20, 20)),
 
         top_wall(sf::Vector2f(0, -10), sf::Vector2f(WINDOW_WIDTH, 10)),
         bottom_wall(sf::Vector2f(0, WINDOW_HEIGHT), sf::Vector2f(WINDOW_WIDTH, 10)),
@@ -21,6 +27,9 @@ Game::Game():
 
     window.setFramerateLimit(0);
     window.setVerticalSyncEnabled(true);
+
+    font.loadFromFile("../font.ttf");
+
     game_loop();
 }
 
@@ -38,15 +47,29 @@ void Game::game_loop() {
         if (top_wall.isColliding(ball) || bottom_wall.isColliding(ball))
             ball.bounce_y();
 
-        left_paddle.move(delta);
-        right_paddle.move(delta);
-        ball.move(delta);
+        if (left_wall.isColliding(ball)) {
+            right_score.increment_score();
+            right_score.update(delta);
+            reset_sprites();
+        }
+
+        if (right_wall.isColliding(ball)) {
+            left_score.increment_score();
+            left_score.update(delta);
+            reset_sprites();
+        }
+
+        left_paddle.update(delta);
+        right_paddle.update(delta);
+        ball.update(delta);
 
         window.clear();
 
         left_paddle.draw(window);
         right_paddle.draw(window);
         ball.draw(window);
+        left_score.draw(window);
+        right_score.draw(window);
 
         window.display();
     }
@@ -103,6 +126,12 @@ void Game::handle_event(const sf::Event& event) {
 
         default: break;
     }
+}
+
+void Game::reset_sprites() {
+    left_paddle.reset();
+    right_paddle.reset();
+    ball.reset();
 }
 
 /**

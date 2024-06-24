@@ -1,25 +1,24 @@
 /**
  * @file
  * @author Oliver Dixon
- * @date 23 June 2022
+ * @date 23 June 2024
  */
 
 #include "Ball.h"
 
-Ball::Ball(sf::Vector2f initial_centroid_position):
+Ball::Ball(const sf::Vector2f&& initial_centroid_position):
+
         IDrawable<sf::CircleShape>(RADIUS),
         random_number_generator(std::random_device{}()),
+        IAnimatable<sf::Vector2f, sf::Vector2f>(sf::Vector2f(-SPEED, 0),
+                                                initial_centroid_position),
         uniform_distribution(-100, 100) {
 
     shape.setFillColor(COLOUR);
-
-    initial_centroid_position.x -= RADIUS;
-    initial_centroid_position.y -= RADIUS;
-
-    shape.setPosition(initial_centroid_position);
+    IAnimatable::reset();
 }
 
-void Ball::move(float delta) {
+void Ball::update(float delta) {
     shape.move(velocity * delta);
 }
 
@@ -43,4 +42,8 @@ const sf::Vector2f& Ball::getSize() const {
 
 const sf::Vector2f& Ball::getPosition() const {
     return shape.getPosition();
+}
+
+void Ball::set_state(const sf::Vector2f& state) {
+    shape.setPosition(state);
 }

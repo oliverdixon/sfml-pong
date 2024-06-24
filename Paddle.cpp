@@ -1,23 +1,25 @@
 /**
  * @file
  * @author Oliver Dixon
- * @date 23 June 2022
+ * @date 23 June 2024
  */
 
 #include "Paddle.h"
 
-Paddle::Paddle(sf::Vector2f initial_centroid_position):
-        IDrawable<sf::RectangleShape>(sf::Vector2(WIDTH, HEIGHT)) {
+Paddle::Paddle(const sf::Vector2f&& initial_centroid_position):
+
+        IDrawable<sf::RectangleShape>(sf::Vector2(WIDTH, HEIGHT)),
+        IAnimatable<float, sf::Vector2f>(0, initial_centroid_position) {
 
     shape.setFillColor(COLOUR);
 
-    if (initial_centroid_position.x != 0)
-        initial_centroid_position.x -= WIDTH;
+    if (initial_state.x != 0)
+        initial_state.x -= WIDTH;
 
-    if (initial_centroid_position.y != 0)
-        initial_centroid_position.y -= HEIGHT / 2;
+    if (initial_state.y != 0)
+        initial_state.y -= HEIGHT / 2;
 
-    shape.setPosition(initial_centroid_position);
+    IAnimatable::reset();
 }
 
 void Paddle::move_up() {
@@ -32,7 +34,7 @@ void Paddle::move_stop() {
     velocity = 0.0f;
 }
 
-void Paddle::move(float delta) {
+void Paddle::update(float delta) {
     shape.move(0, velocity * delta);
 }
 
@@ -44,3 +46,6 @@ const sf::Vector2f& Paddle::getPosition() const {
     return shape.getPosition();
 }
 
+void Paddle::set_state(const sf::Vector2f &state) {
+    shape.setPosition(state);
+}
