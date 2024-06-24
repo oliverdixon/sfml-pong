@@ -25,10 +25,12 @@ public:
     /**
      * Instantiate a new wall with the given top-left position and rectangular size.
      *
-     * @param position The top-left position of the wall.
-     * @param size The size of the wall.
+     * @param x_pos The fixed X position of the Wall
+     * @param y_pos The fixed Y position of the Wall
+     * @param width The fixed width of the Wall
+     * @param height The fixed height of the Wall
      */
-    explicit Wall(const sf::Vector2f& position, const sf::Vector2f& size);
+    explicit Wall(float x_pos, float y_pos, float width, float height);
 };
 
 #endif //PONG_WALL_H

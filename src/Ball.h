@@ -25,9 +25,10 @@ public:
     /**
      * Creates the Ball with an initial centroid position, typically the centre of the screen.
      *
-     * @param initial_centroid_position The position defining the initial central point of the Ball
+     * @param x_pos The initial X position of the Ball
+     * @param y_pos The initial Y position of the Ball
      */
-    explicit Ball(const sf::Vector2f&& initial_centroid_position);
+    explicit Ball(float x_pos, float y_pos);
 
     /**
      * Bounce on the X axis, according to a random angle on the Y.

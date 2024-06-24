@@ -14,6 +14,6 @@ const sf::Vector2f& Wall::getSize() const {
     return size;
 }
 
-Wall::Wall(const sf::Vector2f& position, const sf::Vector2f& size):
-        position(position),
-        size(size) { }
+Wall::Wall(float x_pos, float y_pos, float width, float height):
+        position(x_pos, y_pos),
+        size(width, height) { }

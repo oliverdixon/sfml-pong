@@ -22,9 +22,10 @@ public:
      * Instantiates a Score to be rendered with the given font, at the given position.
      *
      * @param font The SFML font to be used for rendering the numerical score.
-     * @param position The fixed position of the onscreen text.
+     * @param x_pos The fixed X position of the label
+     * @param y_pos The fixed Y position of the label
      */
-    Score(const sf::Font& font, sf::Vector2f position);
+    Score(const sf::Font& font, float x_pos, float y_pos);
 
     /**
      * Increments the score by a single point

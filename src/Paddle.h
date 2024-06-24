@@ -24,9 +24,10 @@ public:
     /**
      * Creates a Paddle with an initial centroid position, typically an extreme-centre of the screen.
      *
-     * @param initial_centroid_position The position defining the initial central point of the Paddle
+     * @param x_pos Initial X position of the Paddle
+     * @param y_pos Initial Y position of the Paddle
      */
-    explicit Paddle(const sf::Vector2f&& initial_centroid_position);
+    explicit Paddle(float x_pos, float y_pos);
 
     /**
      * Queue an update-up animation for the Paddle

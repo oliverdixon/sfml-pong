@@ -7,27 +7,25 @@
 #include "Game.h"
 
 Game::Game():
-
         // TODO: refactor this monstrosity
 
         window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_TITLE),
 
-        left_paddle(sf::Vector2f(0, WINDOW_HEIGHT / 2.0f)),
-        right_paddle(sf::Vector2f(WINDOW_WIDTH, WINDOW_HEIGHT / 2.0f)),
+        left_paddle(0, WINDOW_HEIGHT / 2.0f),
+        right_paddle(WINDOW_WIDTH, WINDOW_HEIGHT / 2.0f),
 
-        ball(sf::Vector2f(WINDOW_WIDTH / 2.0f, WINDOW_HEIGHT / 2.0f)),
+        ball(WINDOW_WIDTH / 2.0f, WINDOW_HEIGHT / 2.0f),
 
-        left_score(font, sf::Vector2f(WINDOW_WIDTH / 3.0 - 20, 20)),
-        right_score(font, sf::Vector2f(2.0 * WINDOW_WIDTH / 3 + 20, 20)),
+        left_score(font, WINDOW_WIDTH / 3.0 - 20, 20),
+        right_score(font, 2.0 * WINDOW_WIDTH / 3 + 20, 20),
 
-        top_wall(sf::Vector2f(0, -10), sf::Vector2f(WINDOW_WIDTH, 10)),
-        bottom_wall(sf::Vector2f(0, WINDOW_HEIGHT), sf::Vector2f(WINDOW_WIDTH, 10)),
-        left_wall(sf::Vector2f(-10, 0), sf::Vector2f(10, WINDOW_HEIGHT)),
-        right_wall(sf::Vector2f(WINDOW_WIDTH, 0), sf::Vector2f(10, WINDOW_HEIGHT)) {
+        top_wall(0, -10, WINDOW_WIDTH, 10),
+        bottom_wall(0, WINDOW_HEIGHT, WINDOW_WIDTH, 10),
+        left_wall(-10, 0, 10, WINDOW_HEIGHT),
+        right_wall(WINDOW_WIDTH, 0, 10, WINDOW_HEIGHT) {
 
     window.setFramerateLimit(0);
     window.setVerticalSyncEnabled(true);
-
     font.loadFromFile("../font.ttf");
 
     game_loop();

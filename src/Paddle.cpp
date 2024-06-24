@@ -6,10 +6,10 @@
 
 #include "Paddle.h"
 
-Paddle::Paddle(const sf::Vector2f&& initial_centroid_position):
+Paddle::Paddle(const float x_pos, const float y_pos):
 
         IDrawable<sf::RectangleShape>(sf::Vector2(WIDTH, HEIGHT)),
-        IAnimatable<float, sf::Vector2f>(0, initial_centroid_position) {
+        IAnimatable<float, sf::Vector2f>(0, sf::Vector2f(x_pos, y_pos)) {
 
     shape.setFillColor(COLOUR);
 
