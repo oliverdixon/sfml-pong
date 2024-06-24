@@ -30,7 +30,7 @@ private:
     static inline const std::string WINDOW_TITLE{"Pong @ LBU!"};
 
     sf::RenderWindow window;
-    sf::Clock clock;
+    sf::Clock clock{};
 
     Paddle left_paddle;
     Paddle right_paddle;

@@ -7,7 +7,7 @@
 #include "Ball.h"
 
 Ball::Ball(sf::Vector2f initial_centroid_position):
-        shape(RADIUS),
+        IDrawable<sf::CircleShape>(RADIUS),
         random_number_generator(std::random_device{}()),
         uniform_distribution(-100, 100) {
 
@@ -17,14 +17,6 @@ Ball::Ball(sf::Vector2f initial_centroid_position):
     initial_centroid_position.y -= RADIUS;
 
     shape.setPosition(initial_centroid_position);
-}
-
-void Ball::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-    target.draw(shape, states);
-}
-
-void Ball::draw(sf::RenderTarget &target) const {
-    target.draw(shape, sf::RenderStates::Default);
 }
 
 void Ball::move(float delta) {

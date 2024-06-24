@@ -7,7 +7,8 @@
 #include "Paddle.h"
 
 Paddle::Paddle(sf::Vector2f initial_centroid_position):
-        shape{sf::Vector2(WIDTH, HEIGHT)} {
+        IDrawable<sf::RectangleShape>(sf::Vector2(WIDTH, HEIGHT)) {
+
     shape.setFillColor(COLOUR);
 
     if (initial_centroid_position.x != 0)
@@ -33,14 +34,6 @@ void Paddle::move_stop() {
 
 void Paddle::move(float delta) {
     shape.move(0, velocity * delta);
-}
-
-void Paddle::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-    target.draw(shape, states);
-}
-
-void Paddle::draw(sf::RenderTarget &target) const {
-    target.draw(shape, sf::RenderStates::Default);
 }
 
 const sf::Vector2f& Paddle::getSize() const {

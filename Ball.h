@@ -12,18 +12,18 @@
 
 #include "IMovable.h"
 #include "ICollideable.h"
+#include "IDrawable.h"
 
 /**
  * The on-screen Ball should be bounced by the paddles of players, and used to increment the scores of opponents.
  */
-class Ball: public sf::Drawable, public IMovable, public ICollideable {
+class Ball: public IDrawable<sf::CircleShape>, public IMovable, public ICollideable {
 private:
     static constexpr float RADIUS{10};
     static constexpr float SPEED{300};
     static constexpr const sf::Color& COLOUR = sf::Color::White;
 
     sf::Vector2f velocity{-SPEED, 0};
-    sf::CircleShape shape;
 
     std::mt19937 random_number_generator;
     std::uniform_int_distribution<int> uniform_distribution;
@@ -47,11 +47,6 @@ public:
      */
     explicit Ball(sf::Vector2f initial_centroid_position);
 
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-    void draw(sf::RenderTarget& target) const;
-
-    void move(float delta) override;
-
     /**
      * Bounce on the X axis, according to a random angle on the Y.
      */
@@ -61,6 +56,8 @@ public:
      * Bounce on the Y axis only
      */
     void bounce_y();
+
+    void move(float delta) override;
 };
 
 #endif //PONG_BALL_H

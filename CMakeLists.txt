@@ -15,6 +15,7 @@ add_executable(Pong
         Wall.h
         Game.cpp
         Game.h
+        IDrawable.h
 )
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
