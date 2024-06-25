@@ -52,8 +52,8 @@ private:
     static constexpr float SPEED{600};
     static constexpr const sf::Color& COLOUR = sf::Color::White;
 
-    const sf::Vector2f& getSize() const override;
-    const sf::Vector2f& getPosition() const override;
+    auto getSize() const -> const sf::Vector2f& override;
+    auto getPosition() const -> const sf::Vector2f& override;
     void set_state(const sf::Vector2f& state) override;
 };
 

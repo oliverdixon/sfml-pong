@@ -24,8 +24,8 @@ public:
      * Instantiates an Animatable object with a given initial velocity and initial basal state, where the latter refers
      * to the 'stateful variable' used by an Updatable object.
      *
-     * @param initial_velocity The initial velocity
-     * @param initial_state The initial basal state
+     * @param initial_velocity The initial velocity.
+     * @param initial_state The initial basal state.
      */
     explicit IAnimatable(VelocityType initial_velocity, StateType initial_state):
             IUpdatable<StateType>(initial_state) {

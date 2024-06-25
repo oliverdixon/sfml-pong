@@ -21,7 +21,7 @@ public:
      * @param candidate The collideable object against which to test for a collision.
      * @return Are the objects colliding?
      */
-    [[nodiscard]] virtual bool isColliding(const ICollideable& candidate) const {
+    [[nodiscard]] virtual auto isColliding(const ICollideable& candidate) const -> bool {
         const sf::Vector2f& size = getSize();
         const sf::Vector2f& position = getPosition();
         const sf::Vector2f& candidate_size = candidate.getSize();
@@ -39,14 +39,14 @@ protected:
      *
      * @return The size of the object
      */
-    [[nodiscard]] virtual const sf::Vector2f& getSize() const = 0;
+    [[nodiscard]] virtual auto getSize() const -> const sf::Vector2f& = 0;
 
     /**
      * Retrieves the current position, anchored on the top-left, of the collideable object.
      *
      * @return The position of the object
      */
-    [[nodiscard]] virtual const sf::Vector2f& getPosition() const = 0;
+    [[nodiscard]] virtual auto getPosition() const -> const sf::Vector2f& = 0;
 };
 
 #endif //PONG_ICOLLIDEABLE_H

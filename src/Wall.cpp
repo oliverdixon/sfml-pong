@@ -6,11 +6,11 @@
 
 #include "Wall.h"
 
-const sf::Vector2f& Wall::getPosition() const {
+auto Wall::getPosition() const -> const sf::Vector2f& {
     return position;
 }
 
-const sf::Vector2f& Wall::getSize() const {
+auto Wall::getSize() const -> const sf::Vector2f& {
     return size;
 }
 

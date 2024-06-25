@@ -18,8 +18,8 @@ private:
     sf::Vector2f size;
     sf::Vector2f position;
 
-    [[nodiscard]] const sf::Vector2f& getSize() const override;
-    [[nodiscard]] const sf::Vector2f& getPosition() const override;
+    [[nodiscard]] auto getSize() const -> const sf::Vector2f& override;
+    [[nodiscard]] auto getPosition() const -> const sf::Vector2f& override;
 
 public:
     /**

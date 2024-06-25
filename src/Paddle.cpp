@@ -31,18 +31,18 @@ void Paddle::move_down() {
 }
 
 void Paddle::move_stop() {
-    velocity = 0.0f;
+    velocity = 0.0;
 }
 
 void Paddle::update(float delta) {
     shape.move(0, velocity * delta);
 }
 
-const sf::Vector2f& Paddle::getSize() const {
+auto Paddle::getSize() const -> const sf::Vector2f& {
     return shape.getSize();
 }
 
-const sf::Vector2f& Paddle::getPosition() const {
+auto Paddle::getPosition() const -> const sf::Vector2f& {
     return shape.getPosition();
 }
 

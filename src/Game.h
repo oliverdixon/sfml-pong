@@ -29,10 +29,10 @@ public:
 private:
     static constexpr int WINDOW_WIDTH = 800;
     static constexpr int WINDOW_HEIGHT = 600;
-    static inline const std::string WINDOW_TITLE{"Pong @ LBU!"};
+    static constexpr std::string_view WINDOW_TITLE{"Pong @ LBU!"};
 
     sf::RenderWindow window;
-    sf::Clock clock{};
+    sf::Clock clock;
 
     Paddle left_paddle;
     Paddle right_paddle;

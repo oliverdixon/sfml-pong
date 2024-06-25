@@ -4,12 +4,13 @@
  * @date 23 June 2024
  */
 
+#include <iostream>
 #include "Game.h"
 
 Game::Game():
         // TODO: refactor this monstrosity
 
-        window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_TITLE),
+        window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), std::string(WINDOW_TITLE)),
 
         left_paddle(0, WINDOW_HEIGHT / 2.0f),
         right_paddle(WINDOW_WIDTH, WINDOW_HEIGHT / 2.0f),
@@ -26,7 +27,9 @@ Game::Game():
 
     window.setFramerateLimit(0);
     window.setVerticalSyncEnabled(true);
-    font.loadFromFile("../font.ttf");
+
+    if (!font.loadFromFile("../font.ttf"))
+        throw std::runtime_error("The font file could not be found.");
 
     game_loop();
 }
@@ -137,7 +140,13 @@ void Game::reset_sprites() {
  *
  * @return The process exit status code
  */
-int main() {
-    Game game;
+auto main() -> int {
+    try {
+        Game game;
+    } catch (const std::runtime_error& exception) {
+        std::cerr << "Fatal error: " << exception.what() << std::endl;
+        return -1;
+    }
+
     return 0;
 }

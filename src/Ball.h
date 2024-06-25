@@ -46,6 +46,8 @@ private:
     static constexpr float RADIUS{10};
     static constexpr float SPEED{300};
     static constexpr const sf::Color& COLOUR = sf::Color::White;
+    static constexpr int MINIMUM_RANDOM_REFLECTION_ANGLE = -100;
+    static constexpr int MAXIMUM_RANDOM_REFLECTION_ANGLE = 100;
 
     std::mt19937 random_number_generator;
     std::uniform_int_distribution<int> uniform_distribution;
@@ -55,10 +57,10 @@ private:
      *
      * @return The randomly generated angle, in degrees.
      */
-    float generate_random_angle();
+    auto generate_random_angle() -> float;
 
-    const sf::Vector2f& getSize() const override;
-    const sf::Vector2f& getPosition() const override;
+    auto getSize() const -> const sf::Vector2f& override;
+    auto getPosition() const -> const sf::Vector2f& override;
     void set_state(const sf::Vector2f& state) override;
 };
 

@@ -7,6 +7,8 @@
 #ifndef PONG_IUPDATABLE_H
 #define PONG_IUPDATABLE_H
 
+#include <optional>
+
 /**
  * The Updatable interface allows the initialisation and resetting (but not storage) of a stateful value, such as an
  * onscreen position. Any implementors must provide a method of propagating the changed state, a method of resetting the
