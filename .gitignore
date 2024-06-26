@@ -1,5 +1,6 @@
-cmake-build-*/
-.idea/
-
 .*
+cmake-build-*/
+
+.idea/
 font.ttf
+/uml/class-model-inkscape.svg

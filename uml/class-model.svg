@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1432.6" height="587.06" contentStyleType="text/css" inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)" preserveAspectRatio="none" sodipodi:docname="class-model.svg" version="1.1" viewBox="0 0 1432.6 587.06" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" zoomAndPan="magnify">
+ <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" inkscape:current-layer="elem_IAnimatable" inkscape:cx="904.32328" inkscape:cy="327.58931" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1016" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="0" inkscape:window-y="0" inkscape:zoom="0.90509668" pagecolor="#ffffff" showgrid="false"/>
+ <g transform="translate(23.307 329.03)">
+  <!--class IDrawable-->
+  <!--class IUpdatable-->
+  <!--class IAnimatable-->
+  <!--class ICollideable-->
+  <!--class Wall-->
+  <!--class Score-->
+  <g id="a" transform="translate(-1024.1 -240.78)">
+   <rect id="b" x="1001" y="388.97" width="386" height="64.297" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="27"/>
+   <circle cx="1176.2" cy="404.97" r="11" fill="#add1b2" stroke="#181818"/>
+   <path d="m1179.2 410.61q-0.5782 0.2969-1.2188 0.4375-0.6406 0.1563-1.3437 0.1563-2.5 0-3.8282-1.6406-1.3125-1.6563-1.3125-4.7813t1.3125-4.7812q1.3282-1.6563 3.8282-1.6563 0.7031 0 1.3437 0.1563 0.6563 0.1562 1.2188 0.4531v2.7187q-0.625-0.5781-1.2188-0.8437-0.5937-0.2813-1.2187-0.2813-1.3438 0-2.0313 1.0782-0.6875 1.0625-0.6875 3.1562 0 2.0938 0.6875 3.1719 0.6875 1.0625 2.0313 1.0625 0.625 0 1.2187-0.2656 0.5938-0.2813 1.2188-0.8594z"/>
+   <text x="1196.75" y="409.81671" fill="#000000" font-family="sans-serif" font-size="14px" textLength="27">Wall</text>
+   <line x1="1002" x2="1386" y1="420.97" y2="420.97" stroke="#181818" stroke-width=".5"/>
+   <line x1="1002" x2="1386" y1="428.97" y2="428.97" stroke="#181818" stroke-width=".5"/>
+   <circle cx="1012" cy="442.62" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="1021" y="445.96509" fill="#000000" font-family="sans-serif" font-size="14px" textLength="360">Wall(position: Vector2&lt;float&gt;, size: Vector2&lt;float&gt;)</text>
+  </g>
+  <g id="c" transform="translate(641.94 -640.22)">
+   <rect id="d" x="7" y="372.67" width="322" height="96.891" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="31"/>
+   <circle cx="143.75" cy="388.67" r="11" fill="#add1b2" stroke="#181818"/>
+   <path d="m146.72 394.31q-0.5782 0.2969-1.2188 0.4375-0.6406 0.1563-1.3437 0.1563-2.5 0-3.8282-1.6406-1.3125-1.6563-1.3125-4.7813t1.3125-4.7812q1.3282-1.6563 3.8282-1.6563 0.7031 0 1.3437 0.1563 0.6563 0.1562 1.2188 0.4531v2.7187q-0.625-0.5781-1.2188-0.8437-0.5937-0.2813-1.2187-0.2813-1.3438 0-2.0313 1.0782-0.6875 1.0625-0.6875 3.1562 0 2.0938 0.6875 3.1719 0.6875 1.0625 2.0313 1.0625 0.625 0 1.2187-0.2656 0.5938-0.2813 1.2188-0.8594z"/>
+   <text x="164.25" y="393.51669" fill="#000000" font-family="sans-serif" font-size="14px" textLength="40">Score</text>
+   <line x1="8" x2="328" y1="404.67" y2="404.67" stroke="#181818" stroke-width=".5"/>
+   <line x1="8" x2="328" y1="412.67" y2="412.67" stroke="#181818" stroke-width=".5"/>
+   <circle cx="18" cy="426.32" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="27" y="429.6651" fill="#000000" font-family="sans-serif" font-size="14px" textLength="131">update(delta: float)</text>
+   <circle cx="18" cy="442.62" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="27" y="445.96201" fill="#000000" font-family="sans-serif" font-size="14px" textLength="126">increment_score()</text>
+   <circle cx="18" cy="458.91" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="27" y="462.25891" fill="#000000" font-family="sans-serif" font-size="14px" textLength="296">Score(font: Font, position: Vector2&lt;float&gt;)</text>
+  </g>
+  <!--class Paddle-->
+  <g id="e" transform="translate(101.51 -229.9)">
+   <rect id="f" x="363.5" y="356.38" width="295" height="129.48" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="37"/>
+   <circle cx="483.25" cy="372.38" r="11" fill="#add1b2" stroke="#181818"/>
+   <path d="m486.22 378.02q-0.5782 0.2969-1.2188 0.4375-0.6406 0.1563-1.3437 0.1563-2.5 0-3.8282-1.6406-1.3125-1.6563-1.3125-4.7813t1.3125-4.7812q1.3282-1.6563 3.8282-1.6563 0.7031 0 1.3437 0.1563 0.6563 0.1562 1.2188 0.4531v2.7187q-0.625-0.5781-1.2188-0.8437-0.5937-0.2813-1.2187-0.2813-1.3438 0-2.0313 1.0782-0.6875 1.0625-0.6875 3.1562 0 2.0938 0.6875 3.1719 0.6875 1.0625 2.0313 1.0625 0.625 0 1.2187-0.2656 0.5938-0.2813 1.2188-0.8594z"/>
+   <text x="503.75" y="377.22672" fill="#000000" font-family="sans-serif" font-size="14px" textLength="47">Paddle</text>
+   <line x1="364.5" x2="657.5" y1="388.38" y2="388.38" stroke="#181818" stroke-width=".5"/>
+   <line x1="364.5" x2="657.5" y1="396.38" y2="396.38" stroke="#181818" stroke-width=".5"/>
+   <circle cx="374.5" cy="410.03" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="383.5" y="413.37509" fill="#000000" font-family="sans-serif" font-size="14px" textLength="73">move_up()</text>
+   <circle cx="374.5" cy="426.33" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="383.5" y="429.672" fill="#000000" font-family="sans-serif" font-size="14px" textLength="93">move_down()</text>
+   <circle cx="374.5" cy="442.62" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="383.5" y="445.9689" fill="#000000" font-family="sans-serif" font-size="14px" textLength="86">move_stop()</text>
+   <circle cx="374.5" cy="458.92" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="383.5" y="462.26569" fill="#000000" font-family="sans-serif" font-size="14px" textLength="131">update(delta: float)</text>
+   <circle cx="374.5" cy="475.22" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="383.5" y="478.56259" fill="#000000" font-family="sans-serif" font-size="14px" textLength="269">Paddle(initial_position: Vector2&lt;float&gt;)</text>
+  </g>
+  <!--class Ball-->
+  <g id="g" transform="translate(-658.56 -680.22)">
+   <rect id="h" x="694" y="364.52" width="272" height="113.19" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="45"/>
+   <circle cx="813.75" cy="380.52" r="11" fill="#add1b2" stroke="#181818"/>
+   <path d="m816.72 386.16q-0.5782 0.2969-1.2188 0.4375-0.6406 0.1563-1.3437 0.1563-2.5 0-3.8282-1.6406-1.3125-1.6563-1.3125-4.7813t1.3125-4.7812q1.3282-1.6563 3.8282-1.6563 0.7031 0 1.3437 0.1563 0.6563 0.1562 1.2188 0.4531v2.7187q-0.625-0.5781-1.2188-0.8437-0.5937-0.2813-1.2187-0.2813-1.3438 0-2.0313 1.0782-0.6875 1.0625-0.6875 3.1562 0 2.0938 0.6875 3.1719 0.6875 1.0625 2.0313 1.0625 0.625 0 1.2187-0.2656 0.5938-0.2813 1.2188-0.8594z"/>
+   <text x="834.25" y="385.3667" fill="#000000" font-family="sans-serif" font-size="14px" textLength="24">Ball</text>
+   <line x1="695" x2="965" y1="396.52" y2="396.52" stroke="#181818" stroke-width=".5"/>
+   <line x1="695" x2="965" y1="404.52" y2="404.52" stroke="#181818" stroke-width=".5"/>
+   <circle cx="705" cy="418.17" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="714" y="421.51511" fill="#000000" font-family="sans-serif" font-size="14px" textLength="77">bounce_x()</text>
+   <circle cx="705" cy="434.47" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="714" y="437.81201" fill="#000000" font-family="sans-serif" font-size="14px" textLength="77">bounce_y()</text>
+   <circle cx="705" cy="450.76" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="714" y="454.10889" fill="#000000" font-family="sans-serif" font-size="14px" textLength="131">update(delta: float)</text>
+   <circle cx="705" cy="467.06" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="714" y="470.4057" fill="#000000" font-family="sans-serif" font-size="14px" textLength="246">Ball(initial_position: Vector2&lt;float&gt;)</text>
+  </g>
+  <!--class Game-->
+  <g id="i" transform="translate(268.44 32.503)">
+   <rect id="j" x="608.5" y="42.59" width="77" height="64.297" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="52"/>
+   <circle cx="625.3" cy="58.59" r="11" fill="#add1b2" stroke="#181818"/>
+   <path d="m628.27 64.231q-0.5782 0.2969-1.2188 0.4375-0.6406 0.1563-1.3437 0.1563-2.5 0-3.8282-1.6406-1.3125-1.6563-1.3125-4.7813t1.3125-4.7812q1.3282-1.6563 3.8282-1.6563 0.7031 0 1.3437 0.1563 0.6563 0.1562 1.2188 0.4531v2.7187q-0.625-0.5781-1.2188-0.8437-0.5937-0.2813-1.2187-0.2813-1.3438 0-2.0313 1.0782-0.6875 1.0625-0.6875 3.1562 0 2.0938 0.6875 3.1719 0.6875 1.0625 2.0313 1.0625 0.625 0 1.2187-0.2656 0.5938-0.2813 1.2188-0.8594z"/>
+   <text x="639.70001" y="63.436699" fill="#000000" font-family="sans-serif" font-size="14px" textLength="41">Game</text>
+   <line x1="609.5" x2="684.5" y1="74.59" y2="74.59" stroke="#181818" stroke-width=".5"/>
+   <line x1="609.5" x2="684.5" y1="82.59" y2="82.59" stroke="#181818" stroke-width=".5"/>
+   <circle cx="619.5" cy="96.238" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="628.5" y="99.585098" fill="#000000" font-family="sans-serif" font-size="14px" textLength="51">Game()</text>
+  </g>
+  <!--reverse link IUpdatable to IAnimatable-->
+  <g id="k" transform="translate(965.26 -274.64)">
+   <rect id="l" x="221.5" y="199.49" width="219" height="96.891" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="1"/>
+   <circle cx="257.65" cy="215.49" r="11" fill="#b4a7e5" stroke="#181818"/>
+   <path d="m253.57 211.26v-2.1562h7.3906v2.1562h-2.4687v8.0782h2.4687v2.1562h-7.3906v-2.1562h2.4687v-8.0782z"/>
+   <text x="276.35001" y="220.3367" fill="#000000" font-family="sans-serif" font-size="14px" font-style="italic" textLength="67">IDrawable</text>
+   <rect x="372.5" y="196.49" width="71" height="15.969" fill="#fff" stroke="#181818" stroke-dasharray="2, 2"/>
+   <text x="373.5" y="208.62869" fill="#000000" font-family="sans-serif" font-size="12px" font-style="italic" textLength="69">ShapeType</text>
+   <line x1="222.5" x2="439.5" y1="231.49" y2="231.49" stroke="#181818" stroke-width=".5"/>
+   <polygon points="232.5 240.14 236.5 244.14 232.5 248.14 228.5 244.14" fill="none" stroke="#b38d22"/>
+   <text x="241.5" y="248.48511" fill="#000000" font-family="sans-serif" font-size="14px" textLength="134">shape : ShapeType</text>
+   <line x1="222.5" x2="439.5" y1="255.79" y2="255.79" stroke="#181818" stroke-width=".5"/>
+   <circle cx="232.5" cy="269.44" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="241.5" y="272.78201" fill="#000000" font-family="sans-serif" font-size="14px" textLength="193">draw(target : RenderTarget)</text>
+   <circle cx="232.5" cy="285.73" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="241.5" y="289.07889" fill="#000000" font-family="sans-serif" font-size="14px" textLength="89">IDrawable(...)</text>
+  </g>
+  <g id="m" transform="translate(570.94 -103.07)">
+   <rect id="n" x="306" y="10" width="268" height="129.48" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="7"/>
+   <circle cx="365.75" cy="26" r="11" fill="#b4a7e5" stroke="#181818"/>
+   <path d="m361.67 21.766v-2.1562h7.3906v2.1562h-2.4687v8.0782h2.4687v2.1562h-7.3906v-2.1562h2.4687v-8.0782z"/>
+   <text x="386.25" y="30.846701" fill="#000000" font-family="sans-serif" font-size="14px" font-style="italic" textLength="73">IUpdatable</text>
+   <rect x="512" y="7" width="65" height="15.969" fill="#fff" stroke="#181818" stroke-dasharray="2, 2"/>
+   <text x="513" y="19.1387" fill="#000000" font-family="sans-serif" font-size="12px" font-style="italic" textLength="63">StateType</text>
+   <line x1="307" x2="573" y1="42" y2="42" stroke="#181818" stroke-width=".5"/>
+   <polygon points="317 50.648 321 54.648 317 58.648 313 54.648" fill="none" stroke="#b38d22"/>
+   <text x="326" y="58.995098" fill="#000000" font-family="sans-serif" font-size="14px" textLength="159">initial_state : StateType</text>
+   <line x1="307" x2="573" y1="66.297" y2="66.297" stroke="#181818" stroke-width=".5"/>
+   <polygon points="317 74.945 321 78.945 317 82.945 313 78.945" fill="#ff4" stroke="#b38d22"/>
+   <text x="326" y="83.292" fill="#000000" font-family="sans-serif" font-size="14px" textLength="192">set_state(state : StateType)</text>
+   <circle cx="317" cy="96.242" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="326" y="99.588898" fill="#000000" font-family="sans-serif" font-size="14px" textLength="135">update(delta : float)</text>
+   <circle cx="317" cy="112.54" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="326" y="115.8857" fill="#000000" font-family="sans-serif" font-size="14px" textLength="46">reset()</text>
+   <circle cx="317" cy="128.84" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="326" y="132.1826" fill="#000000" font-family="sans-serif" font-size="14px" textLength="242">IUpdatable(initial_state : StateType)</text>
+  </g>
+  <g id="o" transform="translate(-113.06 -276.26)">
+   <rect id="p" x="476" y="199.49" width="474" height="96.891" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="15"/>
+   <circle cx="593.25" cy="215.49" r="11" fill="#b4a7e5" stroke="#181818"/>
+   <path d="m589.17 211.26v-2.1562h7.3906v2.1562h-2.4687v8.0782h2.4687v2.1562h-7.3906v-2.1562h2.4687v-8.0782z"/>
+   <text x="613.75" y="220.3367" fill="#000000" font-family="sans-serif" font-size="14px" font-style="italic" textLength="79">IAnimatable</text>
+   <rect x="803" y="196.49" width="150" height="15.969" fill="#fff" stroke="#181818" stroke-dasharray="2, 2"/>
+   <text x="804" y="208.62869" fill="#000000" font-family="sans-serif" font-size="12px" font-style="italic" textLength="148">VelocityType, StateType</text>
+   <line x1="477" x2="949" y1="231.49" y2="231.49" stroke="#181818" stroke-width=".5"/>
+   <polygon points="491 244.14 487 248.14 483 244.14 487 240.14" fill="none" stroke="#b38d22"/>
+   <text x="496" y="248.48511" fill="#000000" font-family="sans-serif" font-size="14px" textLength="192">initial_velocity : VelocityType</text>
+   <text transform="translate(753.79 263.47)" x="496" y="248.48511" fill="#000000" font-family="sans-serif" font-size="14px" textLength="192"/>
+   <polygon points="491 260.44 487 264.44 483 260.44 487 256.44" fill="none" stroke="#b38d22"/>
+   <text x="496" y="264.78201" fill="#000000" font-family="sans-serif" font-size="14px" textLength="151">velocity : VelocityType</text>
+   <line x1="477" x2="949" y1="272.08" y2="272.08" stroke="#181818" stroke-width=".5"/>
+   <circle cx="487" cy="285.73" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="496" y="289.07889" fill="#000000" font-family="sans-serif" font-size="14px" textLength="448">IAnimatable(initial_velocity : VelocityType, initial_state : StateType)</text>
+   <text x="1522.9844" y="509.01697" fill="#000000" font-family="sans-serif" font-size="17.333px" text-anchor="end" style="line-height:1.25" xml:space="preserve"><tspan x="1522.9844" y="509.01697" text-align="end" sodipodi:role="line">O. W. D. 2024</tspan><tspan x="1522.9844" y="530.68359" font-style="italic" text-align="end" sodipodi:role="line">https://github.com/oliverdixon/sfml-pong</tspan></text>
+  </g>
+  <g id="q" transform="translate(-966.56 -276.26)">
+   <rect id="r" x="984.5" y="199.49" width="307" height="96.891" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="21"/>
+   <circle cx="1094.8" cy="215.49" r="11" fill="#b4a7e5" stroke="#181818"/>
+   <path d="m1090.7 211.26v-2.1562h7.3906v2.1562h-2.4687v8.0782h2.4687v2.1562h-7.3906v-2.1562h2.4687v-8.0782z"/>
+   <text x="1115.25" y="220.3367" fill="#000000" font-family="sans-serif" font-size="14px" font-style="italic" textLength="78">ICollideable</text>
+   <line x1="985.5" x2="1290.5" y1="231.49" y2="231.49" stroke="#181818" stroke-width=".5"/>
+   <line x1="985.5" x2="1290.5" y1="239.49" y2="239.49" stroke="#181818" stroke-width=".5"/>
+   <polygon points="995.5 248.14 999.5 252.14 995.5 256.14 991.5 252.14" fill="#ff4" stroke="#b38d22"/>
+   <text x="1004.5" y="256.48511" fill="#000000" font-family="sans-serif" font-size="14px" textLength="182">getSize() : Vector2&lt;float&gt;</text>
+   <polygon points="995.5 264.44 999.5 268.44 995.5 272.44 991.5 268.44" fill="#ff4" stroke="#b38d22"/>
+   <text x="1004.5" y="272.78201" fill="#000000" font-family="sans-serif" font-size="14px" textLength="208">getPosition() : Vector2&lt;float&gt;</text>
+   <circle cx="995.5" cy="285.73" r="3" fill="#84be84" stroke="#038048"/>
+   <text x="1004.5" y="289.07889" fill="#000000" font-family="sans-serif" font-size="14px" textLength="281">isColliding(candidate : ICollideable) : bool</text>
+  </g>
+  <g id="s" transform="matrix(-1 0 0 1 1430.6 -178.73)" stroke="#181818">
+   <path id="t" d="m593.37 148.52-34.226 0.0121" fill="none" codeLine="56" sodipodi:nodetypes="cc"/>
+   <polygon transform="rotate(-32.855 562.97 124.24)" points="552.18 141.36 542.43 139.97 547.93 148.14 546.67 142.63" fill="#181818"/>
+  </g>
+  <!--reverse link ICollideable to Wall-->
+  <g transform="translate(-80,-20)" stroke="#181818">
+   <path id="u" d="m169.43 49.769 0.021 116.14" fill="none" stroke-dasharray="6.99999, 6.99999" codeLine="58" sodipodi:nodetypes="cc"/>
+   <polygon transform="rotate(18.543 1443.9 -2845.2)" points="1160.2 303.93 1153.6 296.62 1152.6 306.42 1155.2 301.37" fill="#181818"/>
+  </g>
+  <g transform="translate(443.06 -40.462)" stroke="#181818">
+   <polygon transform="rotate(18.543 1382.6 -2835.2)" points="1155.2 301.37 1160.2 303.93 1153.6 296.62 1152.6 306.42" fill="#181818"/>
+   <path d="m169.43 73.133 0.021 92.772" fill="none" stroke-dasharray="6.99999, 6.99999" codeLine="58" sodipodi:nodetypes="cc"/>
+  </g>
+  <g transform="matrix(1 0 0 -1 2 -36.778)" stroke="#181818">
+   <path d="m169.43 49.769 0.021 116.14" fill="none" stroke-dasharray="6.99999, 6.99999" codeLine="58" sodipodi:nodetypes="cc"/>
+   <polygon transform="rotate(18.543 1443.9 -2845.2)" points="1155.2 301.37 1160.2 303.93 1153.6 296.62 1152.6 306.42" fill="#181818"/>
+  </g>
+  <g transform="matrix(1 0 0 -1 753.53 -50.64)">
+   <g transform="translate(0,2)" stroke="#181818">
+    <path d="m169.43 49.771 0.021 67.918" fill="none" stroke-dasharray="6.99999, 6.99999" stroke-width=".99999" codeLine="58" sodipodi:nodetypes="cc"/>
+    <polygon transform="rotate(18.543 1443.9 -2845.2)" points="1153.6 296.62 1152.6 306.42 1155.2 301.37 1160.2 303.93" fill="#181818"/>
+   </g>
+  </g>
+  <!--reverse link IDrawable to Score-->
+  <!--reverse link IUpdatable to Score-->
+  <!--reverse link IDrawable to Paddle-->
+  <!--reverse link IAnimatable to Paddle-->
+  <g id="v" transform="matrix(1 0 0 -1 612.15 87.399)" stroke="#181818">
+   <path id="w" d="m620.3 176.94c-24.26 26.015-183.73 113.28-259.07 135.56" fill="none" stroke-dasharray="7, 7" codeLine="64" sodipodi:nodetypes="cc"/>
+   <polygon transform="rotate(-22.285 311.79 310.41)" points="647.01 299.61 652.65 300.07 652.18 305.71 656.46 296.84" fill="#181818"/>
+  </g>
+  <!--reverse link ICollideable to Paddle-->
+  <!--reverse link IDrawable to Ball-->
+  <g id="x" transform="translate(-65.086 108.18)" stroke="#181818">
+   <path id="y" d="m309.55-76.547c0.0143 29.397 292.72 71.701 292.73 89.029" fill="none" stroke-dasharray="7, 7" codeLine="67" sodipodi:nodetypes="cc"/>
+   <polygon transform="rotate(61.293 691.58 -9.8697)" points="450.57 289.44 440.76 290.3 447.97 297 445.49 291.92" fill="#181818"/>
+  </g>
+  <g transform="matrix(-1 0 0 1 1362.5 196.04)" stroke="#181818">
+   <path d="m65.246-161.22c7.6782 11.798 92.082 96.677 220.69 135.02 134.35 40.052 305.7 35.836 316.35 38.689" fill="none" stroke-dasharray="7, 7" codeLine="67" sodipodi:nodetypes="csc"/>
+   <polygon transform="rotate(61.293 642.49 -259.74)" points="445.49 291.92 450.57 289.44 440.76 290.3 447.97 297" fill="#181818"/>
+  </g>
+  <!--reverse link IAnimatable to Ball-->
+  <!--reverse link ICollideable to Ball-->
+  <g transform="translate(116.64 -43.896)" stroke="#181818">
+   <path id="z" d="m478.44-46.44c-8.7377-16.43-31.716-45.435-97.061-84.125-70.167-41.545-187.89-52.199-187.89-52.199" fill="none" stroke-dasharray="7.00002, 7.00002" codeLine="69" sodipodi:nodetypes="csc"/>
+   <polygon transform="rotate(91.848 929.37 -145.15)" points="1051.8 296.84 1042 297.71 1047.4 299.27 1045.9 304.71" fill="#181818"/>
+  </g>
+  <path d="m1305.3-88.235c162.96-332.61-727.57-229.33-992.89-210.06" fill="none" stroke="#181818" stroke-dasharray="7.00002, 7.00002" codeLine="69" sodipodi:nodetypes="cc"/>
+  <polygon transform="rotate(139.26 1247.2 154.94)" points="1045.9 304.71 1051.8 296.84 1042 297.71 1047.4 299.27" fill="#181818" stroke="#181818"/>
+  <!--SRC=[bLFBJiCm4BpdAonnSPGq1uvLL8c7GDmgMk1OkV6sM7Bio75R2kBVyOlKJGcKIsJFh6V6kp4J6jIAL80URXNPaIM7SlPA6fZl6vYWZmIXYzRkqHXrk04pQggn9ceDsb2F82YekTkcbkxKS54KQVAP9EpWzDHGehsL9ZgsOe9fHlYYjRYr_EPT3j2Um2UqyznOMS0Kk2Q6N759V1W5vYZskJflFEZLZtibM1toFWEN5TDxMvQZeVJRK6L4umEsP9ZA8X_yXrAEpWv_8pbd5Aog3sacD6FlW5EdMMcfBalNgabWfx8rsbByN96nraioiSOL4PHHdo1siYUNKdARfUAaRT4BuTpvPtQ5c-3HDyXHQxBrqVIWCwkayXSv6dSyRIOg1JK8yxFOOZztTmwlfD1ZT6U-EHgA49bD2QMXRLajjx3OD5xDRQZSYMZRQXdOeM1Uhflj6G6kkwujvKPKi7Zp3c6t_ztFdlwFspsfmsNj2Zlcy5vGEHh5Ry5myRzL5eKRie6_dxx3NEEFP3gmL-dRaqGMHt3VBE0z4Nld4maFzWKi-WK0]-->
+ </g>
+</svg>
