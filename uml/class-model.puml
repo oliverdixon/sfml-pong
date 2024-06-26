@@ -1,54 +1,46 @@
 @startuml
 
 interface IDrawable<ShapeType> {
-  #shape : ShapeType
   +draw(target : RenderTarget)
   +IDrawable(...)
 }
 
 interface IUpdatable<StateType> {
-  #initial_state : StateType
-  #set_state(state : StateType)
   +update(delta : float)
   +reset()
   +IUpdatable(initial_state : StateType)
 }
 
-interface IAnimatable<VelocityType, StateType> {
-  #initial_velocity : VelocityType
-  #velocity : VelocityType
+interface IAnimatable<VelocityType, StateType, ShapeType> {
+  +update(delta : float)
   +IAnimatable(initial_velocity : VelocityType, initial_state : StateType)
 }
 
 interface ICollideable {
-  #getSize() : Vector2<float>
-  #getPosition() : Vector2<float>
   +isColliding(candidate : ICollideable) : bool
 }
 
 class Wall {
-  +Wall(position: Vector2<float>, size: Vector2<float>)
+  +Wall(position : Vector2<float>, size : Vector2<float>)
 }
 
 class Score {
-  +update(delta: float)
+  +update(delta : float)
   +increment_score()
-  +Score(font: Font, position: Vector2<float>)
+  +Score(font : Font, position : Vector2<float>)
 }
 
 class Paddle {
   +move_up()
   +move_down()
   +move_stop()
-  +update(delta: float)
-  +Paddle(initial_position: Vector2<float>)
+  +Paddle(initial_position : Vector2<float>)
 }
 
 class Ball {
   +bounce_x()
   +bounce_y()
-  +update(delta: float)
-  +Ball(initial_position: Vector2<float>)
+  +Ball(initial_position : Vector2<float>)
 }
 
 class Game {
@@ -56,17 +48,16 @@ class Game {
 }
 
 IUpdatable <-- IAnimatable
+IDrawable <-- IAnimatable
 
 ICollideable <.. Wall
 
 IDrawable <.. Score
 IUpdatable <.. Score
 
-IDrawable <.. Paddle
 IAnimatable <.. Paddle
 ICollideable <.. Paddle
 
-IDrawable <.. Ball
 IAnimatable <.. Ball
 ICollideable <.. Ball
 

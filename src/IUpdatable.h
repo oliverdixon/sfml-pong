@@ -26,7 +26,7 @@ public:
      * Update the state of an updatable object according to any internal state changes (e.g. standing velocities) to
      * be propagated on the next render cycle.
      *
-     * @param delta The time difference from the previous render cycle, typically used to smoothen animations.
+     * @param delta The time difference from the previous render cycle.
      */
     virtual auto update([[maybe_unused]] float delta) -> void = 0;
 

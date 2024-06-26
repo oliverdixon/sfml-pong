@@ -10,7 +10,10 @@
 #include <SFML/Graphics.hpp>
 
 template<typename T>
-concept GenericDrawable = std::is_base_of_v<sf::Drawable, T>;
+concept IsDrawable = std::is_base_of_v<sf::Drawable, T>;
+
+template<typename T>
+concept GenericDrawable = IsDrawable<T> && std::is_base_of_v<sf::Transformable, T>;
 
 /**
  * Provides a pseudo-wrapper interface for the SFML Drawable type with sensibly defaulting draw methods, and a
@@ -25,7 +28,7 @@ public:
      * Create a new Drawable object
      *
      * @tparam Args The type of arguments passed to the SFML Drawable constructor
-     * @param args The arguments pure-forwarded to the SFML Drawable constructor
+     * @param args Constructor arguments for the SFML Drawable constructor
      */
     template<typename... Args>
     explicit IDrawable(Args&& ... args): shape(std::forward<Args>(args)...) { }

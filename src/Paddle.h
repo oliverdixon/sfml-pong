@@ -17,8 +17,7 @@
  * A player-controlled paddle, movable along the Y axis, used to deflect the ball.
  */
 class Paddle:
-        public IDrawable<sf::RectangleShape>,
-        public IAnimatable<float, sf::Vector2f>,
+        public IAnimatable<float, sf::Vector2f, sf::RectangleShape>,
         public ICollideable {
 public:
     /**
@@ -42,8 +41,6 @@ public:
      * Stop any queued animation
      */
     auto move_stop() -> void;
-
-    auto update(float delta) -> void override;
 
 private:
     static constexpr float WIDTH{25};

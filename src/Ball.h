@@ -18,8 +18,7 @@
  * The on-screen Ball should be bounced by the paddles of players, and used to increment the scores of opponents.
  */
 class Ball:
-        public IDrawable<sf::CircleShape>,
-        public IAnimatable<sf::Vector2f, sf::Vector2f>,
+        public IAnimatable<sf::Vector2f, sf::Vector2f, sf::CircleShape>,
         public ICollideable {
 public:
     /**
@@ -38,8 +37,6 @@ public:
      * Bounce on the Y axis only
      */
     auto bounce_y() -> void;
-
-    auto update(float delta) -> void override;
 
 private:
     static constexpr float RADIUS{10};

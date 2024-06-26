@@ -7,9 +7,8 @@
 #include "Paddle.h"
 
 Paddle::Paddle(const sf::Vector2f& initial_position):
-
-        IDrawable<sf::RectangleShape>(sf::Vector2(WIDTH, HEIGHT)),
-        IAnimatable<float, sf::Vector2f>(0, initial_position) {
+        IAnimatable<float, sf::Vector2f, sf::RectangleShape>(0, initial_position,
+                                                             sf::Vector2(WIDTH, HEIGHT)) {
 
     shape.setFillColor(COLOUR);
 
@@ -32,10 +31,6 @@ auto Paddle::move_down() -> void {
 
 auto Paddle::move_stop() -> void {
     velocity = 0.0;
-}
-
-auto Paddle::update(float delta) -> void {
-    shape.move(0, velocity * delta);
 }
 
 auto Paddle::getSize() const -> const sf::Vector2f& {

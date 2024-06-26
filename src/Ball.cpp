@@ -7,18 +7,12 @@
 #include "Ball.h"
 
 Ball::Ball(const sf::Vector2f& initial_position):
-
-        IDrawable<sf::CircleShape>(RADIUS),
+        IAnimatable<sf::Vector2f, sf::Vector2f, sf::CircleShape>(INITIAL_VELOCITY, initial_position, RADIUS),
         random_number_generator(std::random_device{}()),
-        IAnimatable<sf::Vector2f, sf::Vector2f>(INITIAL_VELOCITY, initial_position),
         uniform_distribution(MINIMUM_RANDOM_REFLECTION_ANGLE, MAXIMUM_RANDOM_REFLECTION_ANGLE) {
 
     shape.setFillColor(COLOUR);
     IAnimatable::reset();
-}
-
-auto Ball::update(float delta) -> void {
-    shape.move(velocity * delta);
 }
 
 auto Ball::generate_random_angle() -> float {
