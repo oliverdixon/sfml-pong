@@ -19,9 +19,8 @@
 template<typename StateType>
 class IUpdatable {
 public:
-    explicit IUpdatable(StateType initial_state) {
-        this->initial_state = initial_state;
-    }
+    explicit IUpdatable(StateType initial_state):
+        initial_state(initial_state) { }
 
     /**
      * Update the state of an updatable object according to any internal state changes (e.g. standing velocities) to
@@ -29,12 +28,12 @@ public:
      *
      * @param delta The time difference from the previous render cycle, typically used to smoothen animations.
      */
-    virtual void update([[maybe_unused]] float delta) = 0;
+    virtual auto update([[maybe_unused]] float delta) -> void = 0;
 
     /**
      * Reverts the updatable object back to its initial state.
      */
-    virtual void reset() {
+    virtual auto reset() -> void {
         set_state(initial_state);
     };
 
@@ -46,7 +45,7 @@ protected:
      *
      * @param state The updated state
      */
-    virtual void set_state(const StateType& state) = 0;
+    virtual auto set_state(const StateType& state) -> void = 0;
 };
 
 #endif //PONG_IUPDATABLE_H

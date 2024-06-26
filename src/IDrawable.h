@@ -35,7 +35,7 @@ public:
      *
      * @param target The target surface onto which the shape should be drawn
      */
-    void draw(sf::RenderTarget& target) const {
+    auto draw(sf::RenderTarget& target) const -> void {
         target.draw(shape, sf::RenderStates::Default);
     }
 

@@ -11,8 +11,8 @@
 #include <random>
 
 #include "ICollideable.h"
-#include "IDrawable.h"
 #include "IAnimatable.h"
+#include "IDrawable.h"
 
 /**
  * The on-screen Ball should be bounced by the paddles of players, and used to increment the scores of opponents.
@@ -25,29 +25,29 @@ public:
     /**
      * Creates the Ball with an initial centroid position, typically the centre of the screen.
      *
-     * @param x_pos The initial X position of the Ball
-     * @param y_pos The initial Y position of the Ball
+     * @param initial_position The initial position of the Ball.
      */
-    explicit Ball(float x_pos, float y_pos);
+    explicit Ball(const sf::Vector2f& initial_position);
 
     /**
      * Bounce on the X axis, according to a random angle on the Y.
      */
-    void bounce_x();
+    auto bounce_x() -> void;
 
     /**
      * Bounce on the Y axis only
      */
-    void bounce_y();
+    auto bounce_y() -> void;
 
-    void update(float delta) override;
+    auto update(float delta) -> void override;
 
 private:
     static constexpr float RADIUS{10};
-    static constexpr float SPEED{300};
     static constexpr const sf::Color& COLOUR = sf::Color::White;
-    static constexpr int MINIMUM_RANDOM_REFLECTION_ANGLE = -100;
-    static constexpr int MAXIMUM_RANDOM_REFLECTION_ANGLE = 100;
+    static inline const sf::Vector2f INITIAL_VELOCITY{-300, 0}; // NOLINT(*-err58-cpp)
+    static constexpr int MINIMUM_RANDOM_REFLECTION_ANGLE = -170;
+    static constexpr int MAXIMUM_RANDOM_REFLECTION_ANGLE = -MINIMUM_RANDOM_REFLECTION_ANGLE;
+    static constexpr float BOUNCE_X_VELOCITY_FACTOR = 1.1;
 
     std::mt19937 random_number_generator;
     std::uniform_int_distribution<int> uniform_distribution;
@@ -61,7 +61,7 @@ private:
 
     auto getSize() const -> const sf::Vector2f& override;
     auto getPosition() const -> const sf::Vector2f& override;
-    void set_state(const sf::Vector2f& state) override;
+    auto set_state(const sf::Vector2f& state) -> void override;
 };
 
 #endif //PONG_BALL_H

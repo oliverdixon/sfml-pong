@@ -10,8 +10,8 @@
 #include <SFML/Graphics.hpp>
 
 #include "IAnimatable.h"
-#include "ICollideable.h"
 #include "Ball.h"
+#include "ICollideable.h"
 
 /**
  * A player-controlled paddle, movable along the Y axis, used to deflect the ball.
@@ -24,27 +24,26 @@ public:
     /**
      * Creates a Paddle with an initial centroid position, typically an extreme-centre of the screen.
      *
-     * @param x_pos Initial X position of the Paddle
-     * @param y_pos Initial Y position of the Paddle
+     * @param initial_position The initial position of the Paddle.
      */
-    explicit Paddle(float x_pos, float y_pos);
+    explicit Paddle(const sf::Vector2f& initial_position);
 
     /**
      * Queue an update-up animation for the Paddle
      */
-    void move_up();
+    auto move_up() -> void;
 
     /**
      * Queue an update-down animation for the Paddle
      */
-    void move_down();
+    auto move_down() -> void;
 
     /**
      * Stop any queued animation
      */
-    void move_stop();
+    auto move_stop() -> void;
 
-    void update(float delta) override;
+    auto update(float delta) -> void override;
 
 private:
     static constexpr float WIDTH{25};
@@ -54,7 +53,7 @@ private:
 
     auto getSize() const -> const sf::Vector2f& override;
     auto getPosition() const -> const sf::Vector2f& override;
-    void set_state(const sf::Vector2f& state) override;
+    auto set_state(const sf::Vector2f& state) -> void override;
 };
 
 #endif //PONG_PADDLE_H

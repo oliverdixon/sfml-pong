@@ -14,6 +14,6 @@ auto Wall::getSize() const -> const sf::Vector2f& {
     return size;
 }
 
-Wall::Wall(float x_pos, float y_pos, float width, float height):
-        position(x_pos, y_pos),
-        size(width, height) { }
+Wall::Wall(const sf::Vector2f& position, const sf::Vector2f& size): // NOLINT(*-easily-swappable-parameters)
+        position(position),
+        size(size) { }

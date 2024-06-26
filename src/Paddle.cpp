@@ -6,10 +6,10 @@
 
 #include "Paddle.h"
 
-Paddle::Paddle(const float x_pos, const float y_pos):
+Paddle::Paddle(const sf::Vector2f& initial_position):
 
         IDrawable<sf::RectangleShape>(sf::Vector2(WIDTH, HEIGHT)),
-        IAnimatable<float, sf::Vector2f>(0, sf::Vector2f(x_pos, y_pos)) {
+        IAnimatable<float, sf::Vector2f>(0, initial_position) {
 
     shape.setFillColor(COLOUR);
 
@@ -22,19 +22,19 @@ Paddle::Paddle(const float x_pos, const float y_pos):
     IAnimatable::reset();
 }
 
-void Paddle::move_up() {
+auto Paddle::move_up() -> void {
     velocity = -SPEED;
 }
 
-void Paddle::move_down() {
+auto Paddle::move_down() -> void {
     velocity = SPEED;
 }
 
-void Paddle::move_stop() {
+auto Paddle::move_stop() -> void {
     velocity = 0.0;
 }
 
-void Paddle::update(float delta) {
+auto Paddle::update(float delta) -> void {
     shape.move(0, velocity * delta);
 }
 
@@ -46,6 +46,6 @@ auto Paddle::getPosition() const -> const sf::Vector2f& {
     return shape.getPosition();
 }
 
-void Paddle::set_state(const sf::Vector2f &state) {
+auto Paddle::set_state(const sf::Vector2f &state) -> void {
     shape.setPosition(state);
 }

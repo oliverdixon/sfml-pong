@@ -28,12 +28,10 @@ public:
      * @param initial_state The initial basal state.
      */
     explicit IAnimatable(VelocityType initial_velocity, StateType initial_state):
-            IUpdatable<StateType>(initial_state) {
+            IUpdatable<StateType>(initial_state),
+            initial_velocity(initial_velocity) { }
 
-        this->initial_velocity = initial_velocity;
-    }
-
-    void reset() final {
+    auto reset() -> void {
         IUpdatable<StateType>::reset();
         velocity = initial_velocity;
     }

@@ -6,19 +6,18 @@
 
 #include "Ball.h"
 
-Ball::Ball(const float x_pos, const float y_pos):
+Ball::Ball(const sf::Vector2f& initial_position):
 
         IDrawable<sf::CircleShape>(RADIUS),
         random_number_generator(std::random_device{}()),
-        IAnimatable<sf::Vector2f, sf::Vector2f>(sf::Vector2f(-SPEED, 0),
-                                                sf::Vector2f(x_pos, y_pos)),
-        uniform_distribution(-MINIMUM_RANDOM_REFLECTION_ANGLE, MAXIMUM_RANDOM_REFLECTION_ANGLE) {
+        IAnimatable<sf::Vector2f, sf::Vector2f>(INITIAL_VELOCITY, initial_position),
+        uniform_distribution(MINIMUM_RANDOM_REFLECTION_ANGLE, MAXIMUM_RANDOM_REFLECTION_ANGLE) {
 
     shape.setFillColor(COLOUR);
     IAnimatable::reset();
 }
 
-void Ball::update(float delta) {
+auto Ball::update(float delta) -> void {
     shape.move(velocity * delta);
 }
 
@@ -26,12 +25,12 @@ auto Ball::generate_random_angle() -> float {
     return static_cast<float>(uniform_distribution(random_number_generator));
 }
 
-void Ball::bounce_x() {
-    velocity.x = -velocity.x;
+auto Ball::bounce_x() -> void {
+    velocity.x = -velocity.x * BOUNCE_X_VELOCITY_FACTOR;
     velocity.y = generate_random_angle();
 }
 
-void Ball::bounce_y() {
+auto Ball::bounce_y() -> void {
     velocity.y = -velocity.y;
 }
 
@@ -44,6 +43,6 @@ auto Ball::getPosition() const -> const sf::Vector2f& {
     return shape.getPosition();
 }
 
-void Ball::set_state(const sf::Vector2f& state) {
+auto Ball::set_state(const sf::Vector2f& state) -> void {
     shape.setPosition(state);
 }

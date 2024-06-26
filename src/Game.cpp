@@ -5,36 +5,40 @@
  */
 
 #include <iostream>
+
 #include "Game.h"
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "readability-math-missing-parentheses"
+#pragma ide diagnostic ignored "cppcoreguidelines-avoid-magic-numbers"
 Game::Game():
-        // TODO: refactor this monstrosity
 
         window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), std::string(WINDOW_TITLE)),
 
-        left_paddle(0, WINDOW_HEIGHT / 2.0f),
-        right_paddle(WINDOW_WIDTH, WINDOW_HEIGHT / 2.0f),
+        left_paddle(sf::Vector2f(0, WINDOW_HEIGHT / 2.0)),
+        right_paddle(sf::Vector2f(WINDOW_WIDTH, WINDOW_HEIGHT / 2.0)),
 
-        ball(WINDOW_WIDTH / 2.0f, WINDOW_HEIGHT / 2.0f),
+        ball(sf::Vector2f(WINDOW_WIDTH / 2.0, WINDOW_HEIGHT / 2.0)),
 
-        left_score(font, WINDOW_WIDTH / 3.0 - 20, 20),
-        right_score(font, 2.0 * WINDOW_WIDTH / 3 + 20, 20),
+        left_score(font, sf::Vector2f(WINDOW_WIDTH / 3.0 - 20, 20)),
+        right_score(font, sf::Vector2f(2.0 * WINDOW_WIDTH / 3 + 20, 20)),
 
-        top_wall(0, -10, WINDOW_WIDTH, 10),
-        bottom_wall(0, WINDOW_HEIGHT, WINDOW_WIDTH, 10),
-        left_wall(-10, 0, 10, WINDOW_HEIGHT),
-        right_wall(WINDOW_WIDTH, 0, 10, WINDOW_HEIGHT) {
+        top_wall(sf::Vector2f(0, -10), sf::Vector2f(WINDOW_WIDTH, 10)),
+        bottom_wall(sf::Vector2f(0, WINDOW_HEIGHT), sf::Vector2f(WINDOW_WIDTH, 10)),
+        left_wall(sf::Vector2f(-10, 0), sf::Vector2f(10, WINDOW_HEIGHT)),
+        right_wall(sf::Vector2f(WINDOW_WIDTH, 0), sf::Vector2f(10, WINDOW_HEIGHT)) {
 
     window.setFramerateLimit(0);
     window.setVerticalSyncEnabled(true);
 
     if (!font.loadFromFile("../font.ttf"))
-        throw std::runtime_error("The font file could not be found.");
+        throw std::runtime_error("The font file could not be loaded by SFML.");
 
     game_loop();
 }
+#pragma clang diagnostic pop
 
-void Game::game_loop() {
+auto Game::game_loop() -> void {
     while (window.isOpen()) {
         sf::Event event{};
 
@@ -76,7 +80,7 @@ void Game::game_loop() {
     }
 }
 
-void Game::handle_key_released(sf::Keyboard::Key keycode) {
+auto Game::handle_key_released(sf::Keyboard::Key keycode) -> void {
     switch (keycode) {
         case sf::Keyboard::W:
         case sf::Keyboard::S:
@@ -92,7 +96,7 @@ void Game::handle_key_released(sf::Keyboard::Key keycode) {
     }
 }
 
-void Game::handle_key_depressed(sf::Keyboard::Key keycode) {
+auto Game::handle_key_depressed(sf::Keyboard::Key keycode) -> void {
     switch (keycode) {
         case sf::Keyboard::W:
             left_paddle.move_up();
@@ -111,7 +115,9 @@ void Game::handle_key_depressed(sf::Keyboard::Key keycode) {
     }
 }
 
-void Game::handle_event(const sf::Event& event) {
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cppcoreguidelines-pro-type-union-access"
+auto Game::handle_event(const sf::Event& event) -> void {
     switch (event.type) {
         case sf::Event::Closed:
             window.close();
@@ -128,8 +134,9 @@ void Game::handle_event(const sf::Event& event) {
         default: break;
     }
 }
+#pragma clang diagnostic pop
 
-void Game::reset_sprites() {
+auto Game::reset_sprites() -> void {
     left_paddle.reset();
     right_paddle.reset();
     ball.reset();
@@ -144,7 +151,7 @@ auto main() -> int {
     try {
         Game game;
     } catch (const std::runtime_error& exception) {
-        std::cerr << "Fatal error: " << exception.what() << std::endl;
+        std::cerr << "Fatal error: " << exception.what() << std::endl; // NOLINT(*-avoid-endl)
         return -1;
     }
 

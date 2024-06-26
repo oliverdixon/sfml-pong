@@ -22,22 +22,21 @@ public:
      * Instantiates a Score to be rendered with the given font, at the given position.
      *
      * @param font The SFML font to be used for rendering the numerical score.
-     * @param x_pos The fixed X position of the label
-     * @param y_pos The fixed Y position of the label
+     * @param position The fixed position of the label.
      */
-    Score(const sf::Font& font, float x_pos, float y_pos);
+    Score(const sf::Font& font, const sf::Vector2f& position);
 
     /**
      * Increments the score by a single point
      */
-    void increment_score();
+    auto increment_score() -> void;
 
-    void update([[maybe_unused]] float delta) override;
+    auto update([[maybe_unused]] float delta) -> void override;
 
 private:
     unsigned int score{};
 
-    void set_state(const unsigned int& state) override;
+    auto set_state(const unsigned int& state) -> void override;
 };
 
 #endif //PONG_SCORE_H

@@ -6,23 +6,23 @@
 
 #include "Score.h"
 
-Score::Score(const sf::Font &font, const float x_pos, const float y_pos):
+Score::Score(const sf::Font &font, const sf::Vector2f& position):
         IUpdatable<unsigned int>(0) {
 
-    shape.setPosition(x_pos, y_pos);
+    shape.setPosition(position);
     shape.setFont(font);
 
     shape.setString(std::to_string(initial_state));
 }
 
-void Score::update(float delta) {
+auto Score::update([[maybe_unused]] float delta) -> void {
     shape.setString(std::to_string(score));
 }
 
-void Score::increment_score() {
+auto Score::increment_score() -> void {
     score++;
 }
 
-void Score::set_state(const unsigned int& state) {
+auto Score::set_state(const unsigned int& state) -> void {
     score = state;
 }
