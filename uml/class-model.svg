@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1089.5" height="701.78" contentStyleType="text/css" inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)" preserveAspectRatio="none" sodipodi:docname="class-model.svg" version="1.1" viewBox="0 0 1089.5 701.78" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" zoomAndPan="magnify">
- <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" inkscape:current-layer="svg242" inkscape:cx="789.0625" inkscape:cy="332.03125" inkscape:lockguides="true" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1016" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="0" inkscape:window-y="0" inkscape:zoom="0.64" pagecolor="#ffffff" showgrid="false"/>
+ <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" inkscape:current-layer="svg242" inkscape:cx="789.0625" inkscape:cy="332.03125" inkscape:lockguides="true" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1016" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="1920" inkscape:window-y="27" inkscape:zoom="0.64" pagecolor="#ffffff" showgrid="false"/>
  <g id="a" transform="translate(232.19 594.64)">
   <rect id="b" x="311.5" y="18.15" width="219" height="80.594" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="1"/>
   <circle cx="347.65" cy="34.15" r="11" fill="#b4a7e5" stroke="#181818"/>
@@ -109,7 +109,7 @@
   <circle cx="823" cy="418.17" r="3" fill="#84be84" stroke="#038048"/>
   <text x="832" y="421.51889" fill="#000000" font-family="sans-serif" font-size="14px" textLength="250">Ball(initial_position : Vector2&lt;float&gt;)</text>
  </g>
- <g id="p" transform="translate(-993.25 610.94)">
+ <g id="p" transform="translate(-139.75 287.38)">
   <rect id="q" x="993.5" y="26.3" width="77" height="64.297" rx="2.5" ry="2.5" fill="#f1f1f1" stroke="#181818" stroke-width=".5" codeLine="44"/>
   <circle cx="1010.3" cy="42.3" r="11" fill="#add1b2" stroke="#181818"/>
   <path d="m1013.3 47.941q-0.5782 0.2969-1.2188 0.4375-0.6406 0.1563-1.3437 0.1563-2.5 0-3.8282-1.6406-1.3125-1.6563-1.3125-4.7813t1.3125-4.7812q1.3282-1.6563 3.8282-1.6563 0.7031 0 1.3437 0.1563 0.6563 0.1562 1.2188 0.4531v2.7187q-0.625-0.5781-1.2188-0.8437-0.5937-0.2813-1.2187-0.2813-1.3438 0-2.0313 1.0782-0.6875 1.0625-0.6875 3.1562 0 2.0938 0.6875 3.1719 0.6875 1.0625 2.0313 1.0625 0.625 0 1.2187-0.2656 0.5938-0.2813 1.2188-0.8594z"/>
@@ -150,10 +150,6 @@
  <g transform="matrix(1 0 0 -1 -582.78 291.44)" stroke="#181818">
   <path d="m710.64 164.3c-0.16174-2.1393-0.43039 50.835 36.328 74.238 32.701 20.82 157.94 20.242 157.94 20.242" fill="none" stroke-dasharray="7, 7" codeLine="60" sodipodi:nodetypes="csc"/>
   <polygon transform="rotate(159.17 759.34 281.63)" points="612.12 249.76 617.29 247.46 607.45 247.97 614.42 254.93" fill="#181818"/>
- </g>
- <g transform="matrix(-1 0 0 1 1547.9 56.199)" stroke="#181818">
-  <path d="m651.92 140.09s-6.7844 66.784 21.523 108.56c25.858 38.159 136.51 27.401 140.74 27.212" fill="none" stroke-dasharray="7, 7" codeLine="60" sodipodi:nodetypes="csc"/>
-  <polygon transform="rotate(144.17 711.9 296)" points="612.12 249.76 617.29 247.46 607.45 247.97 614.42 254.93" fill="#181818"/>
  </g>
  <path d="m894.98 128.4s4.9983-53.504-31.76-76.907c-32.701-20.82-212.07-18.868-212.07-18.868" fill="none" stroke="#181818" stroke-dasharray="7, 7" codeLine="60" sodipodi:nodetypes="csc"/>
  <polygon transform="rotate(-20.833 38.485 45.386)" points="607.45 247.97 614.42 254.93 612.12 249.76 617.29 247.46" fill="#181818" stroke="#181818"/>

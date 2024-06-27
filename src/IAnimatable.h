@@ -48,32 +48,8 @@ public:
             IUpdatable<StateType>(initial_state),
             initial_velocity(initial_velocity) { }
 
-    /**
-     * Updates the Animatable by updating the shape, noting that an additional layer of redirection is required given
-     * the pseudo-partial specialisations of the animation functions.
-     *
-     * @param delta The time difference from the previous render cycle.
-     */
-    constexpr auto update(float delta) -> void override {
+    auto update(float delta) -> void override {
         animate(delta);
-    }
-
-    /**
-     * Animates a shape given a scalar velocity, to be interpreted as a Y-direction velocity.
-     *
-     * @param delta The time difference from the previous render cycle.
-     */
-    auto animate(float delta) -> void requires IsScalar<VelocityType> {
-        IDrawable<ShapeType>::shape.move(0, velocity * delta);
-    }
-
-    /**
-     * Animates a shape in two dimensions given a velocity vector.
-     *
-     * @param delta The time difference from the previous render cycle.
-     */
-    auto animate(float delta) -> void requires IsVector<VelocityType> {
-        IDrawable<ShapeType>::shape.move(velocity * delta);
     }
 
     auto reset() -> void override {
@@ -84,6 +60,25 @@ public:
 protected:
     VelocityType initial_velocity;
     VelocityType velocity;
+
+private:
+    /**
+     * Updates the Animatable by updating the shape.
+     *
+     * @param delta The time difference from the previous render cycle.
+     */
+    auto animate(float delta) -> void requires IsScalar<VelocityType> {
+        IDrawable<ShapeType>::shape.move(0, velocity * delta);
+    }
+
+    /**
+     * Updates the Animatable in two dimensions by updating the shape.
+     *
+     * @param delta The time difference from the previous render cycle.
+     */
+    auto animate(float delta) -> void requires IsVector<VelocityType> {
+        IDrawable<ShapeType>::shape.move(velocity * delta);
+    }
 };
 
 #endif //PONG_IANIMATABLE_H

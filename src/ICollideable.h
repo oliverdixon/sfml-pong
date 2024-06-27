@@ -21,7 +21,7 @@ public:
      * @param candidate The collideable object against which to test for a collision.
      * @return Are the objects colliding?
      */
-    [[nodiscard]] virtual auto isColliding(const ICollideable& candidate) const -> bool {
+    [[nodiscard]] auto isColliding(const ICollideable& candidate) const -> bool {
         const sf::Vector2f& size = getSize();
         const sf::Vector2f& position = getPosition();
         const sf::Vector2f& candidate_size = candidate.getSize();
